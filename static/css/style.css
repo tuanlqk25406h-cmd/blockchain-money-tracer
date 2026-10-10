@@ -422,3 +422,92 @@ td code { color: var(--blue); font-size: 9px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* Readability pass: keep the existing layout and behavior, improve type scale and contrast. */
+:root {
+  --bg: #0b1220;
+  --panel: #111c2e;
+  --panel-raised: #19263a;
+  --panel-deep: #0d1625;
+  --border: #2b3b52;
+  --border-strong: #41536d;
+  --text: #f1f5f9;
+  --muted: #b1bfd1;
+  --muted-2: #91a2b8;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --blue: #8bb8ff;
+  --purple: #c4b5fd;
+  --amber: #fbbf68;
+  --red: #ff9292;
+}
+
+body {
+  font-family: Inter, "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.brand { font-size: 13px; letter-spacing: 0.08em; }
+.environment-tag, .stage-tag { font-size: 11px; }
+.panel-chip, .conservation-badge, .risk-badge { font-size: 10px; }
+.topbar-version { color: var(--muted-2); font-size: 11px; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; }
+.callout-kicker { color: #b0d4e4; font-size: 10px; }
+.source-address { color: #d0dce8; font-size: 12px; }
+.hero-callout p { color: #b1c2d0; font-size: 12px; }
+.control-copy strong { font-size: 14px; }
+.control-copy p { font-size: 13px; line-height: 1.55; }
+.button { font-size: 13px; }
+.metric-label { font-size: 11px; letter-spacing: 0.08em; }
+.metric-note { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.panel-heading h2 { font-size: 19px; }
+.graph-legend { color: var(--muted); font-size: 11px; gap: 16px; }
+.graph-footer { color: var(--muted-2); font-size: 11px; }
+.graph-empty h3 { font-size: 16px; }
+.graph-empty p { font-size: 13px; }
+.detail-placeholder strong { font-size: 14px; }
+.detail-placeholder p { color: var(--muted); font-size: 12px; }
+.wallet-title-block h3 { font-size: 15px; }
+.wallet-title-block code, code { font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace; }
+.wallet-title-block code { font-size: 11px; }
+.wallet-facts span { color: var(--muted); font-size: 11px; }
+.synthetic-tag-note { font-size: 11px; }
+.subsection-title h4 { font-size: 13px; }
+.subsection-title > span { color: var(--muted); font-size: 11px; }
+.signal-header { font-size: 12px; }
+.signal-item p { color: var(--muted); font-size: 12px; line-height: 1.65; }
+.no-signals { font-size: 12px; }
+.tx-direction { font-size: 9px; }
+.related-tx code { font-size: 10px; }
+.related-tx small { color: var(--muted); font-size: 10px; }
+.related-tx > strong { font-size: 11px; }
+.terminal-card-top { color: var(--muted); font-size: 12px; }
+.terminal-marker { color: var(--muted); font-size: 10px; }
+.terminal-card > small { color: var(--muted); font-size: 11px; }
+.empty-result { font-size: 13px; }
+.table-heading h3 { font-size: 14px; }
+.table-heading p { color: var(--muted); font-size: 12px; }
+.filter-box input { min-height: 40px; font-size: 13px; }
+.filter-box input::placeholder { color: var(--muted); }
+th { color: var(--muted); font-size: 11px; }
+td { color: #d8e2ee; font-size: 12px; }
+td code { font-size: 11px; }
+.table-wallet { color: #d8e2ee; }
+.method-note h2 { font-size: 13px; }
+.method-note p { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.footer { color: var(--muted-2); font-size: 11px; letter-spacing: 0.04em; }
+
+@media (max-width: 560px) {
+  .brand { font-size: 11px; }
+  .hero-copy { font-size: 14px; }
+  .panel-heading h2 { font-size: 18px; }
+  .metric-label { font-size: 10px; }
+  .metric-note { font-size: 11px; }
+  .graph-legend { gap: 10px 13px; }
+  .terminal-card-top { font-size: 11px; }
+  .terminal-card > strong { font-size: 20px; }
+  th, td { padding-inline: 12px; }
+}
