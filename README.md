@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Blockchain Money Tracer
 
 Demo phục vụ bài tập MIS, minh họa cách truy vết dòng tiền trên đồ thị giao dịch blockchain giả lập và giải thích các tín hiệu cần được xem xét thêm.
@@ -63,3 +64,6 @@ Mỗi loại tín hiệu chỉ được cộng tối đa một lần cho mỗi v
 ## Giới hạn diễn giải
 
 Dấu vết giao dịch và mẫu bất thường có thể hỗ trợ sàng lọc, nhưng không tự chứng minh chủ sở hữu ví, ý định phạm tội hay hành vi rửa tiền. Mọi kết quả chỉ phản ánh dữ liệu tổng hợp được tạo sẵn.
+=======
+# blockchain-money-tracer
+>>>>>>> 5ad6ea28d9acd7893395e778498f94af0d302142
