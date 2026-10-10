@@ -1,0 +1,132 @@
+{
+  "scenario_id": "BMT-DEMO-100-USDT",
+  "title": "Synthetic 100 USDT tracing scenario",
+  "description": "A fully synthetic classroom scenario used to demonstrate flow tracing, splitting, aggregation, and explainable risk flags. It does not describe real wallets or organizations.",
+  "asset": "USDT",
+  "initial_amount": 100,
+  "source_wallet": "WALLET-A",
+  "allocation_policy": "FIFO (first-in, first-out) is used as an explicit deterministic classroom assumption to attribute pooled value to outgoing flows.",
+  "fee_model": "No fees. Total terminal flow must equal the initial 100 USDT.",
+  "transactions": [
+    {
+      "transaction_id": "TX-001",
+      "from_wallet": "WALLET-A",
+      "to_wallet": "WALLET-B",
+      "amount": 60,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:00:00+07:00"
+    },
+    {
+      "transaction_id": "TX-002",
+      "from_wallet": "WALLET-A",
+      "to_wallet": "WALLET-C",
+      "amount": 40,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:00:00+07:00"
+    },
+    {
+      "transaction_id": "TX-003",
+      "from_wallet": "WALLET-B",
+      "to_wallet": "WALLET-D",
+      "amount": 35,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:00:45+07:00"
+    },
+    {
+      "transaction_id": "TX-004",
+      "from_wallet": "WALLET-B",
+      "to_wallet": "WALLET-E",
+      "amount": 25,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:00:45+07:00"
+    },
+    {
+      "transaction_id": "TX-005",
+      "from_wallet": "WALLET-C",
+      "to_wallet": "WALLET-F",
+      "amount": 25,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:00:45+07:00"
+    },
+    {
+      "transaction_id": "TX-006",
+      "from_wallet": "WALLET-C",
+      "to_wallet": "WALLET-G",
+      "amount": 15,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:00:45+07:00"
+    },
+    {
+      "transaction_id": "TX-007",
+      "from_wallet": "WALLET-D",
+      "to_wallet": "EXCHANGE-A",
+      "amount": 25,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:15+07:00"
+    },
+    {
+      "transaction_id": "TX-008",
+      "from_wallet": "WALLET-D",
+      "to_wallet": "SERVICE-X",
+      "amount": 10,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:15+07:00"
+    },
+    {
+      "transaction_id": "TX-009",
+      "from_wallet": "WALLET-E",
+      "to_wallet": "WALLET-H",
+      "amount": 25,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:45+07:00"
+    },
+    {
+      "transaction_id": "TX-010",
+      "from_wallet": "WALLET-F",
+      "to_wallet": "WALLET-H",
+      "amount": 5,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:45+07:00"
+    },
+    {
+      "transaction_id": "TX-011",
+      "from_wallet": "WALLET-F",
+      "to_wallet": "EXCHANGE-B",
+      "amount": 20,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:45+07:00"
+    },
+    {
+      "transaction_id": "TX-012",
+      "from_wallet": "WALLET-G",
+      "to_wallet": "SERVICE-X",
+      "amount": 5,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:15+07:00"
+    },
+    {
+      "transaction_id": "TX-013",
+      "from_wallet": "WALLET-G",
+      "to_wallet": "EXCHANGE-B",
+      "amount": 10,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:01:15+07:00"
+    },
+    {
+      "transaction_id": "TX-014",
+      "from_wallet": "WALLET-H",
+      "to_wallet": "EXCHANGE-A",
+      "amount": 25,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:02:15+07:00"
+    },
+    {
+      "transaction_id": "TX-015",
+      "from_wallet": "WALLET-H",
+      "to_wallet": "SERVICE-X",
+      "amount": 5,
+      "asset": "USDT",
+      "timestamp": "2026-10-09T10:02:30+07:00"
+    }
+  ]
+}

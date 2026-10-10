@@ -1,0 +1,85 @@
+[
+  {
+    "id": "WALLET-A",
+    "label": "Wallet A · Source",
+    "kind": "source",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-B",
+    "label": "Wallet B",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-C",
+    "label": "Wallet C",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-D",
+    "label": "Wallet D",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-E",
+    "label": "Wallet E",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-F",
+    "label": "Wallet F",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-G",
+    "label": "Wallet G",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "WALLET-H",
+    "label": "Wallet H · Aggregation",
+    "kind": "wallet",
+    "is_terminal": false,
+    "risk_tags": []
+  },
+  {
+    "id": "EXCHANGE-A",
+    "label": "Exchange A (simulated)",
+    "kind": "exchange",
+    "is_terminal": true,
+    "risk_tags": []
+  },
+  {
+    "id": "SERVICE-X",
+    "label": "Service-X (synthetic risk label)",
+    "kind": "service",
+    "is_terminal": true,
+    "risk_tags": [
+      {
+        "code": "SIMULATED_ELEVATED_RISK",
+        "label": "Synthetic elevated-risk service",
+        "description": "Invented classroom label only; it does not refer to a real company, service, or wallet."
+      }
+    ]
+  },
+  {
+    "id": "EXCHANGE-B",
+    "label": "Exchange B (simulated)",
+    "kind": "exchange",
+    "is_terminal": true,
+    "risk_tags": []
+  }
+]

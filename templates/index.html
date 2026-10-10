@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo MIS mô phỏng truy vết dòng tiền blockchain bằng dữ liệu tổng hợp.">
+  <title>Blockchain Money Tracer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Blockchain Money Tracer home">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <span>BLOCKCHAIN <strong>MONEY TRACER</strong></span>
+      </a>
+      <div class="topbar-meta">
+        <span class="environment-tag"><span class="status-dot"></span> LOCAL SIMULATION</span>
+        <span class="topbar-version">MIS LAB / 01</span>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy-block">
+        <p class="eyebrow">FINANCIAL INTELLIGENCE · MIS PROJECT</p>
+        <h1 id="page-title">Follow the flow.<br><span>Understand the risk.</span></h1>
+        <p class="hero-copy">
+          Truy dấu dòng tiền trên đồ thị giao dịch mô phỏng, phân tích các nhánh
+          trung gian và xem lý do tạo cảnh báo — không dùng dữ liệu hoặc dịch vụ bên ngoài.
+        </p>
+      </div>
+      <aside class="hero-callout">
+        <span class="callout-kicker">FIXED SOURCE</span>
+        <div class="source-amount">100 <span>USDT</span></div>
+        <div class="source-address"><span class="tiny-dot"></span> Wallet A · WALLET-A</div>
+        <div class="callout-rule"></div>
+        <p>15 giao dịch mô phỏng<br>11 ví / thực thể · 0 phí</p>
+      </aside>
+    </section>
+
+    <section class="control-bar" aria-label="Trace controls">
+      <div class="control-copy">
+        <span class="control-icon" aria-hidden="true">⌁</span>
+        <div>
+          <strong>Transaction investigation</strong>
+          <p id="status-message" role="status" aria-live="polite">Sẵn sàng phân tích kịch bản cố định 100 USDT.</p>
+        </div>
+      </div>
+      <div class="control-actions">
+        <button id="reset-trace" class="button button-secondary" type="button">Reset</button>
+        <button id="start-trace" class="button button-primary" type="button">
+          <span aria-hidden="true">▶</span> Start Trace
+        </button>
+      </div>
+    </section>
+
+    <section class="metric-grid" aria-label="Trace summary">
+      <article class="metric-card">
+        <div class="metric-top"><span class="metric-label">TRACKED VALUE</span><span class="metric-symbol green">↗</span></div>
+        <div id="metric-tracked" class="metric-value">100 <span>USDT</span></div>
+        <p id="metric-tracked-note" class="metric-note">Giá trị nguồn đã cấu hình</p>
+      </article>
+      <article class="metric-card">
+        <div class="metric-top"><span class="metric-label">WALLETS FOUND</span><span class="metric-symbol blue">⌘</span></div>
+        <div id="metric-wallets" class="metric-value">—</div>
+        <p class="metric-note">Các ví có thể tiếp cận từ nguồn</p>
+      </article>
+      <article class="metric-card">
+        <div class="metric-top"><span class="metric-label">TRANSACTIONS</span><span class="metric-symbol purple">⇄</span></div>
+        <div id="metric-transactions" class="metric-value">15</div>
+        <p class="metric-note">Các giao dịch trong kịch bản</p>
+      </article>
+      <article class="metric-card">
+        <div class="metric-top"><span class="metric-label">HIGH-RISK FLAGS</span><span class="metric-symbol amber">!</span></div>
+        <div id="metric-high-risk" class="metric-value">—</div>
+        <p class="metric-note">Ví thuộc dải điểm cao theo luật demo</p>
+      </article>
+    </section>
+
+    <section class="main-grid">
+      <article class="panel graph-panel" aria-labelledby="graph-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">TRANSACTION MAP</p>
+            <h2 id="graph-title">Money flow network</h2>
+          </div>
+          <span id="graph-state" class="panel-chip">AWAITING TRACE</span>
+        </div>
+        <div class="graph-legend" aria-label="Graph legend">
+          <span><i class="legend-dot source-dot"></i>Source</span>
+          <span><i class="legend-dot normal-dot"></i>Wallet</span>
+          <span><i class="legend-dot terminal-dot"></i>Endpoint</span>
+          <span><i class="legend-dot risk-dot"></i>Simulated risk tag</span>
+        </div>
+        <div id="graph-container" class="graph-container">
+          <div class="graph-empty">
+            <div class="empty-network" aria-hidden="true">
+              <span class="empty-node e1">A</span><span class="empty-node e2">B</span>
+              <span class="empty-node e3">C</span><span class="empty-node e4">?</span>
+              <span class="empty-edge ee1"></span><span class="empty-edge ee2"></span><span class="empty-edge ee3"></span>
+            </div>
+            <h3>Ready to trace the source</h3>
+            <p>Nhấn <strong>Start Trace</strong> để tính toán đường đi và tải mạng giao dịch.</p>
+          </div>
+        </div>
+        <div class="graph-footer">
+          <span><span class="live-indicator"></span> Synthetic ledger</span>
+          <span id="graph-footnote">Các cạnh sẽ hiện số tiền sau khi truy vết</span>
+        </div>
+      </article>
+
+      <aside class="panel detail-panel" aria-labelledby="detail-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">WALLET INTELLIGENCE</p>
+            <h2 id="detail-title">Wallet details</h2>
+          </div>
+          <span id="selected-risk-badge" class="risk-badge risk-none">NO SCORE</span>
+        </div>
+        <div id="wallet-details" class="wallet-details">
+          <div class="detail-placeholder">
+            <span class="placeholder-icon">◎</span>
+            <strong>Select a wallet node</strong>
+            <p>Sau khi truy vết, nhấn vào một ví trên đồ thị để xem các giao dịch liên quan và lý do cảnh báo.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="panel results-panel" aria-labelledby="results-title">
+      <div class="panel-heading results-heading">
+        <div>
+          <p class="eyebrow">TRACE RESULTS</p>
+          <h2 id="results-title">Terminal flow & risk signals</h2>
+        </div>
+        <span id="conservation-badge" class="conservation-badge pending">CONSERVATION NOT RUN</span>
+      </div>
+      <div id="terminal-summary" class="terminal-summary">
+        <div class="empty-result">Kết quả các điểm cuối sẽ xuất hiện sau khi chạy truy vết.</div>
+      </div>
+      <div class="table-heading">
+        <div>
+          <h3>Transaction ledger</h3>
+          <p>Chọn một ví để lọc giao dịch có liên quan.</p>
+        </div>
+        <label class="filter-box">
+          <span class="sr-only">Tìm kiếm giao dịch</span>
+          <input id="transaction-filter" type="search" placeholder="Tìm ví hoặc TX ID…" autocomplete="off">
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>TX ID</th><th>FROM</th><th>TO</th><th>AMOUNT</th><th>TIME</th></tr>
+          </thead>
+          <tbody id="transactions-body">
+            <tr><td colspan="5" class="table-empty">Chưa có kết quả truy vết.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="method-note" aria-labelledby="method-title">
+      <div class="method-icon" aria-hidden="true">i</div>
+      <div>
+        <h2 id="method-title">How to interpret this demo</h2>
+        <p id="disclaimer-text">
+          Mọi ví và giao dịch đều là dữ liệu mô phỏng. Risk Score là điểm ưu tiên xem xét,
+          không phải xác suất phạm tội hay kết luận pháp lý. FIFO là giả định dạy học để
+          phân bổ dòng tiền khi có hội tụ.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>BLOCKCHAIN MONEY TRACER</span>
+      <span>Academic demo · Synthetic data only · Local execution</span>
+    </footer>
+  </main>
+</body>
+</html>
